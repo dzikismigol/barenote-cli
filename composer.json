@@ -20,5 +20,8 @@
     "psr-4": {
       "BarenoteCli\\": "src"
     }
+  },
+  "config": {
+    "bin-dir": "bin"
   }
 }

@@ -1,0 +1,13 @@
+language: php
+
+services:
+cache:
+    directories:
+        - $HOME/.composer/cache
+php:
+    - 7.0
+before_script:
+    - phpenv config-rm xdebug.ini
+    - composer install --prefer-dist -o --no-interaction
+script:
+    - ./bin/phpspec --no-interaction --format=dot run
