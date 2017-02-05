@@ -8,6 +8,7 @@ use BarenoteCli\Command\Menu\AuthenticatedMenu;
 use BarenoteCli\Command\Menu\UnauthenticatedMenu;
 use BarenoteCli\Command\Note\NoteList;
 use BarenoteCli\Command\Note\NoteMenu;
+use BarenoteCli\Command\Note\ViewOneNote;
 
 $application = new Application('Barenote CLI', '0.1', 'http://localhost:8080');
 
@@ -16,7 +17,8 @@ $application->addCommands([
     new AuthenticatedMenu(),
     new Login(),
     new NoteMenu(),
-    new NoteList()
+    new NoteList(),
+    new ViewOneNote()
 ]);
 $application->setDefaultCommand('barenote:prelogin:menu');
 

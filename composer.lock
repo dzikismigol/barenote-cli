@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "8db8c946754e2ee26bc5f477956b4e3f",
-    "content-hash": "b9489e15fbe1fdd66660d6bbc82d0feb",
+    "hash": "7fa611d795b62495128083d5bd274a07",
+    "content-hash": "765d405bfaee6d8561d098ff48d76d5f",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -64,16 +64,16 @@
         },
         {
             "name": "dzikismigol/barenote-sdk-php",
-            "version": "0.1.0",
+            "version": "0.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dzikismigol/barenote-sdk-php.git",
-                "reference": "47f76aa21eefc562aa1d9104e59f4e93000dc918"
+                "reference": "c4e0d8800fa012c482dcada0cdbc63cad3f9154a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dzikismigol/barenote-sdk-php/zipball/47f76aa21eefc562aa1d9104e59f4e93000dc918",
-                "reference": "47f76aa21eefc562aa1d9104e59f4e93000dc918",
+                "url": "https://api.github.com/repos/dzikismigol/barenote-sdk-php/zipball/c4e0d8800fa012c482dcada0cdbc63cad3f9154a",
+                "reference": "c4e0d8800fa012c482dcada0cdbc63cad3f9154a",
                 "shasum": ""
             },
             "require": {
@@ -101,7 +101,7 @@
                 }
             ],
             "description": "SDK for BareNote for PHP",
-            "time": "2017-01-29 13:26:25"
+            "time": "2017-02-05 17:41:50"
         },
         {
             "name": "fgrosse/phpasn1",
