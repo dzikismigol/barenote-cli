@@ -2,11 +2,22 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
 
-use BarenoteCli\Command\LoginCommand;
-use Symfony\Component\Console\Application;
+use BarenoteCli\BarenoteApplication as Application;
+use BarenoteCli\Command\Login;
+use BarenoteCli\Command\Menu\AuthenticatedMenu;
+use BarenoteCli\Command\Menu\UnauthenticatedMenu;
+use BarenoteCli\Command\Note\NoteList;
+use BarenoteCli\Command\Note\NoteMenu;
 
-$application = new Application();
+$application = new Application('Barenote CLI', '0.1', 'http://localhost:8080');
 
-$application->add(new LoginCommand());
+$application->addCommands([
+    new UnauthenticatedMenu(),
+    new AuthenticatedMenu(),
+    new Login(),
+    new NoteMenu(),
+    new NoteList()
+]);
+$application->setDefaultCommand('barenote:prelogin:menu');
 
 $application->run();
