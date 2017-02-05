@@ -1,0 +1,24 @@
+{
+  "name": "dzikismigol/barenote-cli",
+  "type": "project",
+  "require": {
+    "symfony/console": "^3.2",
+    "dzikismigol/barenote-sdk-php": "^0.1.0",
+    "roave/security-advisories": "dev-master"
+  },
+  "require-dev": {
+    "phpspec/phpspec": "^3.2"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Michal Markiewicz",
+      "email": "mmarkiewicz@gog.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "BarenoteCli\\": "src"
+    }
+  }
+}
