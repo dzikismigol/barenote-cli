@@ -2,16 +2,12 @@
 namespace BarenoteCli\Command\Menu;
 
 
+use BarenoteCli\Command\Note\NoteMenu;
+
 class AuthenticatedMenu extends Menu
 {
-    /**
-     * @return string
-     */
-    protected function getSlug()
-    {
-        return 'postauth';
-    }
-    
+    const KEY = 'barenote:postlogin:menu';
+
     /**
      * @return string
      */
@@ -19,14 +15,14 @@ class AuthenticatedMenu extends Menu
     {
         return 'What do you want to do?';
     }
-    
+
     /**
      * @return Choice[]
      */
     protected function getChoices()
     {
         return [
-            new Choice('barenote:note:menu', 'Something with notes'),
+            new Choice(NoteMenu::KEY, 'Something with notes'),
             new Choice(null, 'Actually nothing, exit this app'),
         ];
     }

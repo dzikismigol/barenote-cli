@@ -2,6 +2,7 @@
 namespace BarenoteCli\Command;
 
 use BarenoteCli\BarenoteApplication;
+use BarenoteCli\Command\Menu\AuthenticatedMenu;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Helper\QuestionHelper;
 use Symfony\Component\Console\Input\ArrayInput;
@@ -16,13 +17,15 @@ use Symfony\Component\Console\Question\Question;
  */
 class Login extends Command
 {
+    const KEY = 'barenote:login';
+
     /**
      * @throws \Symfony\Component\Console\Exception\InvalidArgumentException
      */
     protected function configure()
     {
         $this
-            ->setName('barenote:login')
+            ->setName(self::KEY)
             ->setDescription('Fetches token from the API.')
             ->setHelp('This command allows you to authenticate against API...')
             ->setHidden(true);
@@ -33,7 +36,7 @@ class Login extends Command
         $client = $this->getApplication()->getClient();
         /** @var QuestionHelper $helper */
         $helper = $this->getHelper('question');
-        
+
         $question = new Question('Please enter your username' . PHP_EOL, 'dummy');
         $question->setAutocompleterValues(['dummy']);
         $username = $helper->ask($input, $output, $question);
@@ -43,7 +46,7 @@ class Login extends Command
         $password = $helper->ask($input, $output, $question);
         
         $client->authenticate($username, $password);
-        
-        $menu = $this->getApplication()->find('barenote:postauth:menu')->run(new ArrayInput([]), $output);
+
+        $this->getApplication()->find(AuthenticatedMenu::KEY)->run(new ArrayInput([]), $output);
     }
 }

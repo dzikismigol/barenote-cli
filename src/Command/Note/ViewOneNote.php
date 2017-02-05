@@ -17,10 +17,12 @@ use Symfony\Component\Console\Question\Question;
  */
 class ViewOneNote extends Command
 {
+    const KEY = 'barenote:note:one';
+
     protected function configure()
     {
         $this
-            ->setName('barenote:note:one')
+            ->setName(self::KEY)
             ->setDescription('Detailed information about one of your notes')
             ->setHelp('Help for command');
     }

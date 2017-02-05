@@ -9,10 +9,12 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class NoteList extends Command
 {
+    const KEY = 'barenote:note:list';
+
     protected function configure()
     {
         $this
-            ->setName('barenote:note:list')
+            ->setName(self::KEY)
             ->setDescription('List of your recent notes')
             ->setHelp('Some basic menu help');
     }

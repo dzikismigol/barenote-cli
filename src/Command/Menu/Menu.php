@@ -11,11 +11,13 @@ use Symfony\Component\Console\Question\ChoiceQuestion;
 
 abstract class Menu extends Command
 {
+    const KEY = '';
+
     protected function configure()
     {
         $this
-            ->setName("barenote:{$this->getSlug()}:menu")
-            ->setDescription("Menu for {$this->getSlug()} endpoint")
+            ->setName(static::KEY)
+            ->setDescription("Menu for {static::KEY} endpoint")
             ->setHelp('Some basic menu help');
     }
     
@@ -44,11 +46,6 @@ abstract class Menu extends Command
         
         return 0;
     }
-    
-    /**
-     * @return string
-     */
-    protected abstract function getSlug();
     
     /**
      * @return string

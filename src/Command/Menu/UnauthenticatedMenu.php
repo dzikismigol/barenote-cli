@@ -1,17 +1,12 @@
 <?php
 namespace BarenoteCli\Command\Menu;
 
+use BarenoteCli\Command\Login;
+
 class UnauthenticatedMenu extends Menu
 {
-    
-    /**
-     * @return string
-     */
-    protected function getSlug()
-    {
-        return 'prelogin';
-    }
-    
+    const KEY = 'barenote:prelogin:menu';
+
     /**
      * @return string
      */
@@ -26,7 +21,7 @@ class UnauthenticatedMenu extends Menu
     protected function getChoices()
     {
         return [
-            new Choice('barenote:login', 'Sure, login me'),
+            new Choice(Login::KEY, 'Sure, login me'),
             new Choice(null, 'Actually no, exit this app'),
         ];
     }
